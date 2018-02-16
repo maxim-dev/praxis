@@ -19,7 +19,7 @@ export class ListPage {
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
     'american-football', 'boat', 'bluetooth', 'build'];
 
-    this.items = ['person', 'school', 'red', 'boat'];
+    this.items = ['person', 'school', 'red', 'boat','new'];
     /*
     for (let i = 1; i < 11; i++) {
       this.items.push({
