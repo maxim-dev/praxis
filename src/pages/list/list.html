@@ -11,12 +11,15 @@
   <ion-list>
 
     <ion-card *ngFor="let item of items">
-      <ion-card-content class="front">
-        {{item}}
-      </ion-card-content class="back">
       <ion-card-content>
+        <div class="front">
         {{item}}
+        </div>
+        <div class="back">
+        {{item}}
+        </div>
       </ion-card-content>
+
     </ion-card>
 
 
