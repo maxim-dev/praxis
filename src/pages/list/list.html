@@ -11,7 +11,7 @@
   <ion-list>
 
     <ion-card *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-card-content>
+      <ion-card-content [ngClass]="item.flipped ? 'flipped' : ''">
         <div class="front">
         {{item.word}}
         </div>

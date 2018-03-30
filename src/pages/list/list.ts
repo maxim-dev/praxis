@@ -19,11 +19,11 @@ export class ListPage {
     'american-football', 'boat', 'bluetooth', 'build'];
 
     this.items = [
-      {word: 'person', trans: 'человек'},
-      {word: 'school', trans: 'школа'},
-      {word: 'red', trans: 'красный'},
-      {word: 'boat', trans: 'лодка'},
-      {word: 'new', trans: 'новый'}
+      {word: 'person', trans: 'человек', flipped: false},
+      {word: 'school', trans: 'школа', flipped: true},
+      {word: 'red', trans: 'красный', flipped: false},
+      {word: 'boat', trans: 'лодка', flipped: false},
+      {word: 'new', trans: 'новый', flipped: false}
     ];
 
     
@@ -42,6 +42,6 @@ export class ListPage {
   }
 
   itemTapped(event, item) {
-    console.log(item.trans);
+    item.flipped = ! item.flipped;
   }
 }
