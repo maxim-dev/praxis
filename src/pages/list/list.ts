@@ -8,8 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
 export class ListPage {
   selectedItem: any;
   icons: string[];
-  items: string[];
-  //items: Array<{title: string, note: string, icon: string}>;
+  items: Array<{word: string, trans: string}>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
@@ -19,7 +18,18 @@ export class ListPage {
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
     'american-football', 'boat', 'bluetooth', 'build'];
 
-    this.items = ['person', 'school', 'red', 'boat','new'];
+    this.items = [
+      {word: 'person', trans: 'человек'},
+      {word: 'school', trans: 'школа'},
+      {word: 'red', trans: 'красный'},
+      {word: 'boat', trans: 'лодка'},
+      {word: 'new', trans: 'новый'}
+    ];
+
+    
+
+
+
     /*
     for (let i = 1; i < 11; i++) {
       this.items.push({
