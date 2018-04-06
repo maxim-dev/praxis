@@ -1,6 +1,39 @@
-page-list {
+.list {
+      position: relative;
+  perspective: 800px;
+}
+
+.card {
+    transform-style: preserve-3d;
+    transition: transform 1s;  
+  width: 100%;
+  height: 200px;
+    
+    .card-content {
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;       
+    }
+
+    .front {
+        background: red;
+    }
+
+    .back {
+          background: blue;
+  transform: rotateY( 180deg );
+    }
+
+    &.flipped {
+transform: rotateY( 180deg );
+    }
+
 
 }
+
+/*
 
     .card-content {
         transform-style: preserve-3d;
@@ -29,5 +62,6 @@ page-list {
       
     }  
 .card-content.flipped .front {
-  /*display: none;*/
+  // display: none;
 }
+*/
