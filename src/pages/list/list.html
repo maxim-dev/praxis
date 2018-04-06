@@ -10,16 +10,13 @@
 <ion-content>
   <ion-list>
 
-    <ion-card *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-card-content [ngClass]="item.flipped ? 'flipped' : ''">
-        <div class="front">
+    <ion-card *ngFor="let item of items" (click)="itemTapped($event, item)" [ngClass]="item.flipped ? 'flipped' : ''">
+      <ion-card-content class="front">
         {{item.word}}
-        </div>
-        <div class="back">
-        {{item.trans}}
-        </div>
       </ion-card-content>
-
+      <ion-card-content class="back">
+        {{item.trans}}
+      </ion-card-content>
     </ion-card>
 
 
