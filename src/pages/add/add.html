@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>List 1</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-card *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-card-content [ngClass]="item.flipped ? 'flipped' : ''">
+        <div class="front">
+        {{item.word}}
+        </div>
+        <div class="back">
+        {{item.trans}}
+        </div>
+      </ion-card-content>
+
+    </ion-card>
+
+
+<!--
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon [name]="item.icon" item-start></ion-icon>
+      {{item.title}}
+      <div class="item-note" item-end>
+        {{item.note}}
+      </div>
+    </button>
+-->
+
+  </ion-list>
+
+</ion-content>
