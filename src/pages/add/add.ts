@@ -11,7 +11,7 @@ export class AddPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
 
-    this.item = [{word: 'person', trans: 'человек', flipped: false}];
+    this.item = [{word: '', trans: '', flipped: false}];
 
 
 
@@ -20,7 +20,9 @@ export class AddPage {
 
   }
 
-  itemTapped(event, item) {
-    item.flipped = ! item.flipped;
+  addCard() {
+    console.log(this.item);
+
+    localStorage.setItem('card', this.item);
   }
 }

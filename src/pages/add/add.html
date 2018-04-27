@@ -12,15 +12,15 @@
 
   <ion-item>
     <ion-label fixed>На русском</ion-label>
-    <ion-input type="text" ></ion-input>
+    <ion-input type="text" [(ngModel)]="item[0].word"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label fixed>Перевод</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="item[0].trans"></ion-input>
   </ion-item>
 
 </ion-list>
 
-  <button ion-button>Добавить карточку</button>
+  <button ion-button (click)="addCard()">Добавить карточку</button>
   </ion-content>
