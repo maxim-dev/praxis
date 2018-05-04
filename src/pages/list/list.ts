@@ -53,7 +53,7 @@ export class ListPage {
 
     let confirm = this.alertCtrl.create({
       title: 'Удалить слово?',
-      message: 'Вы действительно хотите удалить слово "'+ item.word +'" из списка?',
+      message: 'Вы действительно хотите удалить слово "'+ (item.flipped ? item.trans : item.word) +'" из списка?',
       buttons: [cancel, delCard]
     });
 
