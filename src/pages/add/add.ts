@@ -21,8 +21,13 @@ export class AddPage {
   }
 
   addCard() {
-    console.log(this.item);
+    
 
-    localStorage.setItem('card', JSON.stringify(this.item));
+    let list = localStorage.getItem('list');
+    let items = JSON.parse(list);
+
+    items.push(this.item);
+
+    localStorage.setItem('list', JSON.stringify(items));
   }
 }
