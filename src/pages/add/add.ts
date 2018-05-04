@@ -26,7 +26,7 @@ export class AddPage {
     let list = localStorage.getItem('list');
     let items = JSON.parse(list);
 
-    items.push(this.item);
+
     items.unshift(this.item);
 
     localStorage.setItem('list', JSON.stringify(items));
