@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-add',
@@ -8,10 +9,10 @@ import { NavController, NavParams } from 'ionic-angular';
 export class AddPage {
   item: Object;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
 
 
-    this.item = {word: '', trans: '', flipped: false};
+    this.item = {trans: '', word: '', flipped: false};
 
 
 
@@ -25,10 +26,15 @@ export class AddPage {
 
     let list = localStorage.getItem('list');
     let items = JSON.parse(list);
-
-    items.unshift(this.item);
-    this.item = {word: '', trans: '', flipped: false};
+    items. unshift(this.item);
     localStorage.setItem('list', JSON.stringify(items));
+    this.item = {word: '', trans: '', flipped: false};
+
+    this.alertCtrl.create({
+      title: 'Слово добавлено',
+      subTitle: 'Перейдите в список слов в меню',
+      buttons: ['Ok']
+    }).present();
   }
 
 }
