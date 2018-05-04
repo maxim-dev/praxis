@@ -10,7 +10,7 @@
 <ion-content>
   <ion-list>
 
-    <ion-card *ngFor="let item of items" (click)="itemTapped($event, item)">
+    <ion-card *ngFor="let item of items;let i = index" (click)="itemTapped($event, item)" (press)="itemPressed($event, item, i)">
       <ion-card-content [ngClass]="item.flipped ? 'flipped' : ''">
         <div class="front">
         {{item.word}}

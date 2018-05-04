@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-list',
@@ -10,7 +11,7 @@ export class ListPage {
   icons: string[];
   items: Array<{word: string, trans: string, flipped: boolean}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
 
@@ -26,10 +27,6 @@ export class ListPage {
       {word: 'new', trans: 'новый', flipped: false}
     ];
 
-
-
-
-
     /*
     for (let i = 1; i < 11; i++) {
       this.items.push({
@@ -43,5 +40,28 @@ export class ListPage {
 
   itemTapped(event, item) {
     item.flipped = ! item.flipped;
+  }
+
+  itemPressed(event, item, index) {
+
+    let cancel = {
+      text: 'Отмена'
+    };
+
+    let delCard = {
+      text: 'Удалить',
+      handler: () => {
+        this.items.splice(index, 1);
+      }
+    };
+
+    let confirm = this.alertCtrl.create({
+      title: 'Удалить слово?',
+      message: 'Вы действительно хотите удалить слово "'+ item.word +'" из списка?',
+      buttons: [cancel, delCard]
+    });
+
+    confirm.present();
+
   }
 }
