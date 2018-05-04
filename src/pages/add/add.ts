@@ -6,12 +6,12 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'add.html'
 })
 export class AddPage {
-  item: Array<{word: string, trans: string, flipped: boolean}>;
+  item: Object;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
 
-    this.item = [{word: '', trans: '', flipped: false}];
+    this.item = {word: '', trans: '', flipped: false};
 
 
 
@@ -23,6 +23,6 @@ export class AddPage {
   addCard() {
     console.log(this.item);
 
-    localStorage.setItem('card', this.item);
+    localStorage.setItem('card', JSON.stringify(this.item));
   }
 }
