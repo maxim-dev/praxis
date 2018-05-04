@@ -11,7 +11,7 @@ export class AddPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
 
-    this.item = {word: '', trans: '', flipped: false};
+    this.item = {trans: '', word: '', flipped: false};
 
 
 
