@@ -19,13 +19,7 @@ export class ListPage {
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
     'american-football', 'boat', 'bluetooth', 'build'];
 
-    this.items = [
-      {word: 'person', trans: 'человек', flipped: false},
-      {word: 'school', trans: 'школа', flipped: true},
-      {word: 'red', trans: 'красный', flipped: false},
-      {word: 'boat', trans: 'лодка', flipped: false},
-      {word: 'new', trans: 'новый', flipped: false}
-    ];
+    this.items = this.getItems();
 
     /*
     for (let i = 1; i < 11; i++) {
@@ -52,6 +46,8 @@ export class ListPage {
       text: 'Удалить',
       handler: () => {
         this.items.splice(index, 1);
+
+        localStorage.setItem('list', JSON.stringify(this.items));
       }
     };
 
@@ -63,5 +59,25 @@ export class ListPage {
 
     confirm.present();
 
+  }
+
+  getItems() {
+    let initItems = [
+      {word: 'person', trans: 'человек', flipped: false},
+      {word: 'school', trans: 'школа', flipped: true},
+      {word: 'red', trans: 'красный', flipped: false},
+      {word: 'boat', trans: 'лодка', flipped: false},
+      {word: 'new', trans: 'новый', flipped: false}
+    ];
+
+    let storedItems = localStorage.getItem('list');
+
+    if (storedItems) {
+      return JSON.parse(storedItems);
+    } else {
+      localStorage.setItem('list', JSON.stringify(initItems));
+    }
+
+    return initItems;
   }
 }
