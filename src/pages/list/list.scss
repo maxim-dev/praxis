@@ -22,8 +22,9 @@ page-list {
     }
 
     .front {
-        background: red;
-    }
+        background:
+    linear-gradient(to right, red , yellow);
+}
 
 
     .front, .back {
@@ -42,8 +43,10 @@ page-list {
     }
     .back {
         transform: rotateY( 180deg );
-        background: blue;
-    }
+        background:
+          linear-gradient(to right, blue , green);
+    };
+
 
     .card-content.flipped {
         transform: rotateY( 180deg );
