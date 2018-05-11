@@ -28,7 +28,7 @@ export class AddPage {
     let items = JSON.parse(list);
     items. unshift(this.item);
     localStorage.setItem('list', JSON.stringify(items));
-
+    this.item = {word: '', trans: '', flipped: false};
 
     this.alertCtrl.create({
       title: 'Слово добавлено',
@@ -36,4 +36,5 @@ export class AddPage {
       buttons: ['Ok']
     }).present();
   }
+
 }
